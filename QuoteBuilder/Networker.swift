@@ -50,7 +50,7 @@ class Networker {
     
     func getImage(completion: @escaping (URL) -> (Void)) {
         
-        let apiURL = URL.init(string: "http://lorempixel.com/640/480/" )
+        let apiURL = URL.init(string: "https://source.unsplash.com/random/640x480" )
         
         let downloadTask = URLSession.shared.downloadTask(with: apiURL!) { (url, response, error) in
             

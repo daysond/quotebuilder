@@ -20,7 +20,7 @@ class QuoteCollectionViewCell: UICollectionViewCell {
             if let newQuote = quote {
                 quoteLabel.text = newQuote.quote
                 nameLabel.text = newQuote.name
-                imageView.image = newQuote.photo ?? nil
+                imageView.image = newQuote.photo
             }
         }
     }

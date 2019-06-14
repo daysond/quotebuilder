@@ -105,10 +105,8 @@ extension QuoteCollectionViewController: UICollectionViewDelegate, UICollectionV
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        quoteView.image = quotes[indexPath.item].photo
-        quoteView.name = quotes[indexPath.item].name
-        quoteView.quote = quotes[indexPath.item].quote
-        imageToShare = snapshot(view: quoteView)
+        guard let cell = collectionView.cellForItem(at: indexPath) else {return}
+        imageToShare = snapshot(view: cell )
         shareQuote()
     }
 }

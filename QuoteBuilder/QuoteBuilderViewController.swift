@@ -83,10 +83,6 @@ class QuoteBuilderViewController: UIViewController {
     
     @IBAction func saveQuote(_ sender: UIButton) {
         
-        if photo == nil {
-            
-        }
-        
         guard let name = name else {
             print("Can't find quote author!")
             return
@@ -97,11 +93,11 @@ class QuoteBuilderViewController: UIViewController {
             return
         }
         
-        //        guard let photo = photo else {
-        //            print("Can't find quote author!")
-        //            return
-        //        }
-
+        guard let photo = photo else {
+            print("Can't find quote author!")
+            return
+        }
+        
         
         let quote = Quote(quoteText, by: name, withPhoto: photo)
         saveQuoteDelegate?.saveQuote(quote: quote)
